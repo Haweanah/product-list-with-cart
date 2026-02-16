@@ -1,0 +1,36 @@
+/* ---------------- RESET ---------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: hsl(0, 0%, 100%);
+  line-height: 1.5;
+}
+
+/* ---------------- MAIN CONTAINER ---------------- */
+
+
+
+
+/* ---------------- ATTRIBUTION / FOOTER---------------- */
+
+.attribution {
+   font-size: 11px; text-align: center; 
+  }
+    .attribution a {
+       color: hsl(228, 45%, 44%); 
+      }
