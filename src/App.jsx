@@ -17,15 +17,19 @@ const [CartNo, setCartNo] = useState("0")
     />
   ))
   return (
-    <>
-  <main>
+    <div className="page">
     <Header/>
+  <main>
+  
+   <div className="products">
+     
   {Entry}
+   </div>
   <Cart
   CartNo={CartNo}
   />
   </main>
-    </>
+    </div>
   )
 }
 

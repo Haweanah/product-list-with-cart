@@ -110,7 +110,7 @@ header {
 
 .cart p {
   padding-bottom: 1rem;
-}
+} 
 /* ---------------- ATTRIBUTION / FOOTER---------------- */
 
 .attribution {
@@ -119,3 +119,38 @@ header {
     .attribution a {
        color: hsl(228, 45%, 44%); 
       }
+
+      /* ---------------- DESKTOP DESIGN ---------------- */
+      @media(min-width: 1020px) {
+        body {
+
+          padding: 3rem;
+          position: relative;
+        }
+        main {
+          display: flex;
+          gap: 1rem;
+        }
+
+        
+
+.add-to-cart > button {
+  border-radius: 1200px;
+  -webkit-border-radius: 1200px;
+  -moz-border-radius: 1200px;
+  -ms-border-radius: 1200px;
+  -o-border-radius: 1200px;
+  padding: 0.5rem 1rem;
+}
+        .cart {
+          height: 300px;
+          width: 800px;
+          margin-top: -5rem;
+          }
+
+        .products {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+
