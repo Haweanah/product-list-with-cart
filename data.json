@@ -1,5 +1,6 @@
 [
-    {
+    {   
+        "id": 1,
        "image": {
             "thumbnail": "./public/assets/images/images/images/image-tiramisu-thumbnail.jpg",
             "mobile": "./public/assets/images/images/image-waffle-mobile.jpg",
@@ -10,7 +11,8 @@
        "category": "Waffle",
        "price": 6.50
     },
-    {
+    {   
+        "id": 2,
         "image": {
             "thumbnail": "./public/assets/images/images/image-creme-brulee-thumbnail.jpg",
             "mobile": "./public/assets/images/images/image-creme-brulee-mobile.jpg",
@@ -21,7 +23,8 @@
         "category": "Crème Brûlée",
         "price": 7.00
      },
-     {
+     {  
+        "id": 3,
         "image": {
             "thumbnail": "./public/assets/images/images/image-macaron-thumbnail.jpg",
             "mobile": "./public/assets/images/images/image-macaron-mobile.jpg",
@@ -32,7 +35,8 @@
         "category": "Macaron",
         "price": 8.00
      },
-     {
+     {  
+        "id": 4,
         "image": {
             "thumbnail": "./public/assets/images/images/image-tiramisu-thumbnail.jpg",
             "mobile": "./public/assets/images/images/image-tiramisu-mobile.jpg",
@@ -43,7 +47,8 @@
         "category": "Tiramisu",
         "price": 5.50
      },
-     {
+     {  
+        "id": 5,
         "image": {
             "thumbnail": "../public/assets/images/images/image-baklava-thumbnail.jpg",
             "mobile": "./public/assets/images/images/image-baklava-mobile.jpg",
@@ -54,7 +59,8 @@
         "category": "Baklava",
         "price": 4.00
      },
-     {
+     {  
+        "id": 6,
         "image": {
             "thumbnail": "./public/assets/images/images/image-meringue-thumbnail.jpg",
             "mobile": "./public/assets/images/images/image-meringue-mobile.jpg",
@@ -65,7 +71,8 @@
         "category": "Pie",
         "price": 5.00
      },
-     {
+     {  
+        "id": 7,
         "image": {
             "thumbnail": "./public/assets/images/images/image-cake-thumbnail.jpg",
             "mobile": "./public/assets/images/images/image-cake-mobile.jpg",
@@ -76,7 +83,8 @@
         "category": "Cake",
         "price": 4.50
      },
-     {
+     {  
+        "id": 8,
         "image": {
             "thumbnail": "./public/assets/images/images/image-brownie-thumbnail.jpg",
             "mobile": "./public/assets/images/images/image-brownie-mobile.jpg",
@@ -87,7 +95,8 @@
         "category": "Brownie",
         "price": 4.50
      },
-     {
+     {  
+        "id": 9,
         "image": {
             "thumbnail": "./public/assets/images/images/image-panna-cotta-thumbnail.jpg",
             "mobile": "./public/assets/images/images/image-panna-cotta-mobile.jpg",

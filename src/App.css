@@ -45,6 +45,10 @@ header {
    
 }
 
+.image-clicked {
+  border: 1px solid hsl(14, 86%, 42%);
+}
+
 .entries {
   position: relative;
   z-index: 1;
@@ -69,7 +73,62 @@ header {
   left: 5.3rem;
   border: none;
   border-bottom: 1px solid black;
+  cursor: pointer;
 }
+
+.add-to-cart > button:hover {
+  border: 1px solid hsl(14, 86%, 42%);
+  border-top: none;
+}
+
+.quantity-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:  0.8rem 0.5rem 0.8rem 0.5rem;
+  gap: 2.7rem;
+  color: hsl(13, 31%, 94%);
+  background: hsl(14, 86%, 42%);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  position: absolute;
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  -ms-border-radius: 999px;
+  -o-border-radius: 999px;
+  z-index: 7;
+
+  bottom: 7.6rem;
+  left: 5.3rem;
+}
+
+.quantity-box button {
+  cursor: pointer;
+  font-size: 8px;
+  padding: 0.2rem;
+  background-color: hsl(14, 86%, 42%);
+  border: 1px solid hsl(13, 31%, 94%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+ 
+}
+
+ .quantity-box > button {
+  border: 1px solid hsl(13, 31%, 94%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+  
+
+
 
 .entries .product-list-info {
   padding: 2rem 0;
@@ -88,6 +147,9 @@ header {
   color: hsl(14, 86%, 42%);
   font-weight: 800;
 }
+
+/* ---------------- EMPTY CART ---------------- */
+
 
 .cart {
   background-color: hsl(20, 50%, 98%);
@@ -111,6 +173,99 @@ header {
 .cart p {
   padding-bottom: 1rem;
 } 
+
+/* ---------------- CART WITH PRODUCTS ---------------- */
+
+.cart-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.cart-info > h2 {
+  padding: 1.5rem;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.7rem;
+
+}
+
+.count-details {
+  display: flex;
+  gap: 1rem;
+  color: hsl(14, 25%, 72%);
+  font-weight: 600;
+}
+
+.item-name {
+  font-weight: 600;
+}
+
+.item-no {
+  color: hsl(14, 86%, 42%);
+  font-weight: 600;
+}
+
+.remove-item > img{
+  padding: 0;
+ width: 18px;
+ height: 18px;
+ border-radius: 50%;
+ -webkit-border-radius: 50%;
+ -moz-border-radius: 50%;
+ -ms-border-radius: 50%;
+ -o-border-radius: 50%;
+ border: 1px solid hsl(14, 25%, 72%);
+}
+
+.cart-break {
+  color: hsl(14, 25%, 72%);
+
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.cart-carbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(13, 31%, 94%);
+  
+}
+
+.cart-carbon img {
+  width: 40px;
+  height: 40px;
+  padding: 0.3rem;
+  
+}
+.cart-carbon p  {
+  padding-top: 0.7rem;
+}
+
+input {
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(13, 31%, 94%);
+  border: none;
+  border-radius: 999px;
+  padding: 1rem 5rem;
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  -ms-border-radius: 999px;
+  -o-border-radius: 999px;
+  display: flex;
+  justify-self: center;
+  margin-top: 1rem;
+}
+
 /* ---------------- ATTRIBUTION / FOOTER---------------- */
 
 .attribution {
@@ -124,7 +279,7 @@ header {
       @media(min-width: 1020px) {
         body {
 
-          padding: 3rem;
+          padding: 2.5rem;
           position: relative;
         }
         main {
@@ -132,16 +287,9 @@ header {
           gap: 1rem;
         }
 
+       
         
 
-.add-to-cart > button {
-  border-radius: 1200px;
-  -webkit-border-radius: 1200px;
-  -moz-border-radius: 1200px;
-  -ms-border-radius: 1200px;
-  -o-border-radius: 1200px;
-  padding: 0.5rem 1rem;
-}
         .cart {
           height: 300px;
           width: 800px;
@@ -151,6 +299,23 @@ header {
         .products {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
+          gap: 0.3rem;
+          position: relative;
+          z-index: 5;
+        }
+
+        .entries .image-wrapper > img {
+          width: 100%;
+          height: 100%;
+        }
+
+        .product-list-info > h3 {
+          font-size: 14px;
+        }
+       
+        .quantity-box {
+          gap: 2rem;
+          left: 4em;
+          bottom: 8em;
         }
       }
-

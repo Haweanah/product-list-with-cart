@@ -1,5 +1,5 @@
 export default function Cart (props) {
-    return (
+    return (props.CartNo === 0 ? (
         <div className="cart">
         <div className="cart-info">
             <h2>Your Cart ({props.CartNo})</h2>
@@ -9,6 +9,30 @@ export default function Cart (props) {
 </div>
         
         </div>
+    ) : (
+        <div className="cart">
+        <div className="cart-info">
+            <h2>Your Cart ({props.CartNo})</h2>
+            {props.cartItem}
+        
+            
+</div>
+        <div className="total">
+            <p>Order Total</p>
+            <h3><p>${props.total.toFixed(2)}</p></h3>
+        </div>
+
+        <div className="cart-carbon">
+            <img src="/public/assets/images/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
+            <p>This is a  <pre> </pre><strong>carbon-neutral</strong> <pre> </pre>delivery</p>
+        </div>
+
+        <form action="">
+            <input type="submit" value="Confirm Order" />
+        </form>
+        </div>
+    )
+        
         
     )
 }
