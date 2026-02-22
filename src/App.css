@@ -233,6 +233,10 @@ header {
   padding: 1.5rem;
 }
 
+.total h3 {
+  font-size: 1.5rem;
+}
+
 .cart-carbon {
   display: flex;
   align-items: center;
@@ -266,7 +270,87 @@ input {
   margin-top: 1rem;
 }
 
-/* ---------------- ATTRIBUTION / FOOTER---------------- */
+/* ----------------ORDER CONFIRMATION ---------------- */
+
+.order-confirmed-wrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 100px;
+}
+
+.success-msg {
+  font-size: 2rem;
+  line-height: 4rem;
+}
+
+.success-msg p {
+  font-size: 1rem;
+  line-height: 2rem;
+  color: hsl(14, 25%, 72%);
+  padding-bottom: 2.5rem;
+}
+
+.hr-confirmed {
+  display: none;
+
+
+}
+
+.order-image-wrapper  {
+  display: flex;
+  gap: 1rem;
+  width: 35%;
+  height: auto;
+  align-items: center;
+}
+
+
+.item-total-price {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.img-confirmed {
+  display: inline-block;
+  width: 100%;
+  
+}
+
+.img-not-confirmed {
+  display: none;
+}
+
+.ordered-items-wrapper {
+  padding-bottom: 1.5rem;
+}
+
+.ordered-items {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: hsl(13, 31%, 94%);
+
+}
+
+.ordered-item-left {
+  display: flex;
+  gap: 1rem;
+  line-height: 2rem;
+}
+.order-items-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  display: flex;
+  text-wrap: wrap;
+  line-height: 1rem;
+}
+
+
+
+/* ---------------- ATTRIBUTION / FOOTER ---------------- */
 
 .attribution {
    font-size: 11px; text-align: center; 

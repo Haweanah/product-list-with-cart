@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import Entries from "./components/Entries"
 import data from "../data.json"
 import Cart from "./components/Cart"
+import OrderConfirmed from "./components/OrderConfirmed"
 import './App.css'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
 
 const [CartNo, setCartNo] = useState(0);
 const [quantities, setQuantities] = useState({});
+const [orderConfirmed, setOrderConfirmed] = useState(false)
 
 
 
@@ -63,11 +65,11 @@ function decrease(id) {
 const cartItem = data
   .filter(item => quantities[item.id] > 0)
   .map(item => (
-
-    <div>
+    !orderConfirmed ? ( <div>
       <div key={item.id} className="cart-wrapper">
       <div className="cart-item">
         <p className="item-name">{item.name}</p>
+        
         <p className="count-details">
           <span className="item-no">{quantities[item.id]}x</span>
           <span>@ ${item.price.toFixed(2)}</span>
@@ -86,10 +88,48 @@ const cartItem = data
       </div>
       
     </div>
-    <hr />
+    <hr 
+    className={orderConfirmed ? "hr-confirmed" : ""}
+    />
     
     </div>
+    ) : ( 
+
     
+    <div>
+      <div key={item.id} className="ordered-items-wrapper">
+      <div className="ordered-items">
+       <div className="ordered-item-left">
+         <div className="order-image-wrapper"><img 
+        className={orderConfirmed ? "img-confirmed" : "img-not-confirmed"}
+        src={item.image.mobile} alt="" />
+        </div>
+        <div className="order-items-details">
+          <p className="item-name">{item.name}</p>
+        <p className="count-details">
+          <span className="item-no">{quantities[item.id]}x</span>
+          <span>@ ${item.price.toFixed(2)}</span>
+        </p>
+        
+        </div>
+       </div>
+        <div> <span className="item-total-price">
+            ${(quantities[item.id] * item.price).toFixed(2)}
+          </span></div>
+        
+        
+      </div>
+
+      
+      
+    </div>
+    <hr 
+    className={orderConfirmed ? "hr-confirmed" : ""}
+    />
+    
+    </div>
+    )
+   
 
     
 
@@ -105,27 +145,34 @@ for (let i = 0; i < data.length; i++) {
   total += item.price * quantity
 }
 
-total.toFixed(2)
-  return (
-    <div className="page">
-    <Header/>
-  <main>
-  
-   <div className="products">
-     
-  {Entry}
-   </div>
-  <Cart
-  CartNo={CartNo}
-  addProduct={addProduct}
-  removeProduct={removeProduct}
-  resetCart={resetCart}
-  cartItem={cartItem}
-  total={total}
+
+function handleOrderConfirmation() {
+  setOrderConfirmed(true)
+}
+
+
+return orderConfirmed ? (
+  <OrderConfirmed 
+    cartItem={cartItem}
+    total={total}
   />
-  </main>
-    </div>
-  )
+) : (
+  <div className="page">
+    <Header/>
+    <main>
+      <div className="products">
+        {Entry}
+      </div>
+
+      <Cart
+        CartNo={CartNo}
+        cartItem={cartItem}
+        total={total}
+        handleOrderConfirmation={handleOrderConfirmation}
+      />
+    </main>
+  </div>
+)
 }
 
 export default App

@@ -1,4 +1,5 @@
 export default function Cart (props) {
+    
     return (props.CartNo === 0 ? (
         <div className="cart">
         <div className="cart-info">
@@ -27,7 +28,10 @@ export default function Cart (props) {
             <p>This is a  <pre> </pre><strong>carbon-neutral</strong> <pre> </pre>delivery</p>
         </div>
 
-        <form action="">
+        <form onSubmit={(e) => {
+  e.preventDefault()
+  props.handleOrderConfirmation()
+}}>
             <input type="submit" value="Confirm Order" />
         </form>
         </div>
