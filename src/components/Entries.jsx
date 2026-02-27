@@ -9,7 +9,7 @@ export default function Entries(props) {
 
       <div className="add-to-cart">
         <button onClick={() => props.increase(props.id)}>
-          <img src="/assets/images/icon-add-to-cart.svg" alt="" />
+          <img src="/assets/images/images/icon-add-to-cart.svg" alt="" />
           Add to Cart
         </button>
       </div>
@@ -32,7 +32,7 @@ export default function Entries(props) {
         <button 
         className="decrease-btn"
         onClick={() => props.decrease(props.id)}>
-          <img src="/assets/images/icon-decrement-quantity.svg" alt="" />
+          <img src="/assets/images/images/icon-decrement-quantity.svg" alt="" />
         </button>
 
         <div className="">{props.quantity}</div>
