@@ -4,7 +4,7 @@ export default function Cart (props) {
         <div className="cart">
         <div className="cart-info">
             <h2>Your Cart ({props.CartNo})</h2>
-        <img src="/public/assets/images/images/illustration-empty-cart.svg" alt="" />
+        <img src="/images/illustration-empty-cart.svg" alt="" />
         <p>Your added items will appear here</p>
   
 </div>
@@ -24,7 +24,7 @@ export default function Cart (props) {
         </div>
 
         <div className="cart-carbon">
-            <img src="/images/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
+            <img src="/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
             <p>This is a  <pre> </pre><strong>carbon-neutral</strong> <pre> </pre>delivery</p>
         </div>
 

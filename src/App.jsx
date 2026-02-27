@@ -81,7 +81,7 @@ const cartItem = data
 
       <div className="remove-item">
         <img
-          src="/public/assets/images/images/icon-remove-item.svg"
+          src="/images/icon-remove-item.svg"
           alt="remove item"
           onClick={() => decrease(item.id)}
         />

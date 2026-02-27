@@ -1,99 +1,100 @@
-🛒 Product List With Cart
+# 🛒 Product List With Cart
 
-A responsive e-commerce product listing app where users can add desserts to a cart, adjust quantities, view totals, and confirm orders with a floating success modal.
+- A responsive e-commerce product listing app where users can add desserts to a cart, adjust quantities, view totals, and confirm orders with a floating success modal.
+--- 
 
-🔗 Live Demo
-
-Add your deployed link here
+[productlistwithcart](https://product-list-with-cart-15jy.onrender.com/)
 
 📂 Repository
 
-Add your GitHub repo link here
+[haweanah](https://github.com/Haweanah/product-list-with-cart)
+---
 
-📌 Overview
+## 📌 Overview
 
 This project is a dynamic product listing page built with React.
 Users can:
 
-View a list of desserts
+- View a list of desserts
 
-Add items to cart
+- Add items to cart
 
-Increase/decrease quantities
+- Increase/decrease quantities
 
-See real-time total price updates
+- See real-time total price updates
 
-Confirm orders
+- Confirm orders
 
-View a floating order confirmation modal
+- View a floating order confirmation modal
 
-Experience responsive layouts across mobile, tablet, and desktop
+- Experience responsive layouts across mobile, tablet, and desktop
 
 The focus of this project was state management, conditional rendering, UI overlays, and responsive design.
 
-🚀 Features
+## 🚀 Features
 
-🛍 Add & remove products from cart
+- 🛍 Add & remove products from cart
 
-🔢 Dynamic quantity control per product
+- 🔢 Dynamic quantity control per product
 
-💰 Automatic total price calculation
+- 💰 Automatic total price calculation
 
-📱 Fully responsive (mobile-first approach)
+- 📱 Fully responsive (mobile-first approach)
 
-🎉 Floating order confirmation modal
+- 🎉 Floating order confirmation modal
 
-🌫 Background dimming when modal is active
+- 🌫 Background dimming when modal is active
 
-🔒 Scroll locking when order is confirmed
+- 🔒 Scroll locking when order is confirmed
 
-🧠 What I Practiced & Learned
+## 🧠 What I Practiced & Learned
 
-Managing complex state using useState
+- Managing complex state using useState
 
-Preventing layout shifts in responsive design
+- Preventing layout shifts in responsive design
 
-Using .filter() and .map() for dynamic UI rendering
+- Using .filter() and .map() for dynamic UI rendering
 
-Calculating totals with loops and array methods
+- Calculating totals with loops and array methods
 
-Conditional rendering in React
+- Conditional rendering in React
 
-Creating modal overlays with position: fixed
+- Creating modal overlays with position: fixed
 
-Preventing background scrolling
+- Preventing background scrolling
 
-Handling UI transitions between states
+- Handling UI transitions between states
 
-Fixing flexbox layout issues
+- Fixing flexbox layout issues
 
-Formatting prices to 2 decimal places
+- Formatting prices to 2 decimal places
 
-🛠 Built With
+--- 
+## 🛠 Built With
 
-React
+- React
 
-JavaScript (ES6+)
+- JavaScript (ES6+)
 
-CSS3 (Flexbox & Media Queries)
+- CSS3 (Flexbox & Media Queries)
 
-JSON data
+- JSON data
 
-📐 Responsive Breakpoints
+### 📐 Responsive Breakpoints
 
-Mobile: 0 – 767px
+- Mobile: 0 – 767px
 
-Tablet: 768px – 1023px
+- Tablet: 768px – 1023px
 
-Desktop: 1024px+
+- Desktop: 1024px+
 
-💡 Key Implementation Details
-Dynamic Cart Rendering
+### 💡 Key Implementation Details
+- Dynamic Cart Rendering
 
-Items only appear in the cart if their quantity is greater than zero:
+- Items only appear in the cart if their quantity is greater than zero:
 
-data.filter(item => quantities[item.id] > 0)
-Total Price Calculation
+- data.filter(item => quantities[item.id] > 0)
+- Total Price Calculation
 let total = 0
 
 for (let i = 0; i < data.length; i++) {
@@ -101,45 +102,42 @@ for (let i = 0; i < data.length; i++) {
   const quantity = quantities[item.id] || 0
   total += item.price * quantity
 }
-Floating Confirmation Modal
+- Floating Confirmation Modal
 
 Uses position: fixed
 
-Background dimmed using filter: brightness()
+- Scroll locked with:
 
-Scroll locked with:
+## 🎨 UI Highlights
 
-document.body.style.overflow = "hidden"
-🎨 UI Highlights
+- Smooth layout stability (no shifting images)
 
-Smooth layout stability (no shifting images)
+- Clean card structure
 
-Clean card structure
+- Floating confirmation modal
 
-Floating confirmation modal
+- Subtle elevation effect using shadows
 
-Subtle elevation effect using shadows
-
-Price formatting with .toFixed(2)
+- Price formatting with .toFixed(2)
 
 📷 Screenshots
 
 Add screenshots here (desktop + mobile)
 
-🧩 Future Improvements
+## 🧩 Future Improvements
 
-Add animations to modal
+- Add animations to modal
 
-Add cart persistence using localStorage
+- Add cart persistence using localStorage
 
-Improve accessibility (ARIA roles)
+- Improve accessibility (ARIA roles)
 
-Add checkout form validation
+- Add checkout form validation
 
-Add toast notifications
+- Add toast notifications
 
 👤 Author
 
-Your Name
-Frontend Developer
-Add LinkedIn / Portfolio link
+Hauwa Abdulkadir
+ahauwa48@yahoo.com[
+[haweanah](https://github.com/Haweanah/product-list-with-cart)]
