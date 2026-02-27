@@ -2,12 +2,14 @@ export default function Entries(props) {
   return props.quantity === 0 ? (
     <article className="entries">
       <div className="image-wrapper">
-        <img src={props.image.mobile} alt={props.name} />
+        <img className="mobile-image" src={props.image.mobile} alt={props.name} />
+        <img className="desktop-image" src={props.image.desktop} alt={props.name} />
+        <img className="tablet-image" src={props.image.tablet} alt={props.name} />
       </div>
 
       <div className="add-to-cart">
         <button onClick={() => props.increase(props.id)}>
-          <img src="/assets/images/icon-add-to-cart.svg" alt="" />
+          <img src="/public/assets/images/images/icon-add-to-cart.svg" alt="" />
           Add to Cart
         </button>
       </div>

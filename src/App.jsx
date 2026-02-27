@@ -104,12 +104,12 @@ const cartItem = data
         className={orderConfirmed ? "img-confirmed" : "img-not-confirmed"}
         src={item.image.mobile} alt="" />
         </div>
-        <div className="order-items-details">
-          <p className="item-name">{item.name}</p>
-        <p className="count-details">
+        <div className="ordered-items-details-confirmed">
+          <span className="ordered-item-name">{item.name}</span>
+        <span className="count-details">
           <span className="item-no">{quantities[item.id]}x</span>
           <span>@ ${item.price.toFixed(2)}</span>
-        </p>
+        </span>
         
         </div>
        </div>
@@ -152,10 +152,29 @@ function handleOrderConfirmation() {
 
 
 return orderConfirmed ? (
-  <OrderConfirmed 
+<div>
+   <div className="page-on-confirmation">
+    <Header/>
+    <main>
+      <div className="products">
+        {Entry}
+      </div>
+
+      <Cart
+        CartNo={CartNo}
+        cartItem={cartItem}
+        total={total}
+        handleOrderConfirmation={handleOrderConfirmation}
+      />
+    </main>
+  </div>
+  <div className="confirmed-page-overlayed"><OrderConfirmed 
     cartItem={cartItem}
     total={total}
-  />
+  /></div>
+</div>
+  
+  
 ) : (
   <div className="page">
     <Header/>
