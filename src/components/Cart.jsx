@@ -24,7 +24,7 @@ export default function Cart (props) {
         </div>
 
         <div className="cart-carbon">
-            <img src="/public/assets/images/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
+            <img src="/images/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
             <p>This is a  <pre> </pre><strong>carbon-neutral</strong> <pre> </pre>delivery</p>
         </div>
 

@@ -4,7 +4,7 @@ export default function OrderConfirmed (props) {
                  <>
                  <div className="order-confirmed-wrapper">
         <div className="success-msg">
-            <img src="/public/assets/images/images/icon-order-confirmed.svg" alt="" />
+            <img src="images/icon-order-confirmed.svg" alt="" />
             <h2>Order Confirmed</h2>
             <p>We hope you enjoy your food!</p>
 
