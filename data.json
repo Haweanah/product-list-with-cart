@@ -3,7 +3,7 @@
         "id": 1,
        "image": {
             "thumbnail": "/assets/images/images/image-tiramisu-thumbnail.jpg",
-            "mobile": "/images/images/image-waffle-mobile.jpg",
+            "mobile": "/assets/images/images/image-waffle-mobile.jpg",
             "tablet": "/assets/images/images/image-waffle-tablet.jpg",
             "desktop": "/assets/images/images/image-waffle-desktop.jpg"
        },
