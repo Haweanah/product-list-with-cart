@@ -28,22 +28,29 @@ export default function Entries(props) {
         src={props.image.mobile} alt={props.name} />
       </div>
 
-      <button className="quantity-box">
-        <button 
-        className="decrease-btn"
-        onClick={() => props.decrease(props.id)}>
-          <img src="/assets/images/images/icon-decrement-quantity.svg" alt="" />
-        </button>
+     <div className="quantity-box">
+  <button
+    className="decrease-btn"
+    onClick={() => props.decrease(props.id)}
+  >
+    <img
+      src="/assets/images/images/icon-decrement-quantity.svg"
+      alt=""
+    />
+  </button>
 
-        <div className="">{props.quantity}</div>
+  <span>{props.quantity}</span>
 
-        <button 
-        className="add-btn"
-        onClick={() => props.increase(props.id)}>
-          <img src="/assets/images/icon-increment-quantity.svg" alt="" />
-        </button>
-      </button>
-
+  <button
+    className="add-btn"
+    onClick={() => props.increase(props.id)}
+  >
+    <img
+      src="/assets/images/icon-increment-quantity.svg"
+      alt=""
+    />
+  </button>
+</div>
       <div className="product-list-info">
         <p>{props.category}</p>
         <h3>{props.name}</h3>
