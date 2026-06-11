@@ -3,8 +3,7 @@ export default function Entries(props) {
     <article className="entries">
       <div className="image-wrapper">
         <img className="mobile-image" src={props.image.mobile} alt={props.name} />
-        <img className="desktop-image" src={props.image.desktop} alt={props.name} />
-        <img className="tablet-image" src={props.image.tablet} alt={props.name} />
+       
       </div>
 
       <div className="add-to-cart">
