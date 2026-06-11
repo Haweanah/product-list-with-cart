@@ -46,8 +46,8 @@ export default function Entries(props) {
     onClick={() => props.decrease(props.id)}
   >
     <img
-      src="/assets/images/images/icon-decrement-quantity.svg"
-      alt=""
+      src="/images/icon-decrement-quantity.svg"
+      alt="decrement button"
     />
   </button>
 
@@ -58,8 +58,8 @@ export default function Entries(props) {
     onClick={() => props.increase(props.id)}
   >
     <img
-      src="/assets/images/images/icon-increment-quantity.svg"
-      alt=""
+      src="/images/icon-increment-quantity.svg"
+      alt="increment button"
     />
   </button>
 </div>
