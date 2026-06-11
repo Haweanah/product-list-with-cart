@@ -46,7 +46,7 @@ export default function Entries(props) {
     onClick={() => props.decrease(props.id)}
   >
     <img
-      src="/images/icon-decrement-quantity.svg"
+      src="../images/icon-decrement-quantity.svg"
       alt="decrement button"
     />
   </button>
