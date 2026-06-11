@@ -418,6 +418,13 @@ hr {
 
       /* ---------------- TABLET DESIGN ---------------- */
       
+            @media(min-width: 465px) {
+              .tablet-image,
+              .desktop-image {
+                display: none;
+              }
+            }
+
       @media(min-width: 768px) {
 
         main {
@@ -499,6 +506,31 @@ hr {
           display: none;
         }
 
+         .image-wrapper {
+          height: 170px;
+          width: 170px;
+        }
+
+        .image-wrapper > .desktop-image {
+          height: 100%;
+          height: 100%;
+        } 
+
+
+         .products {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 0.3rem;
+          position: relative;
+          z-index: 5;
+        }
+
+        .entries .image-wrapper > img {
+          width: 100%;
+          height: 100%;
+        }
+
+
         .desktop-image {
           display: inline;
         }
@@ -532,19 +564,7 @@ padding: 0.5rem 1rem;
           margin-top: -5rem;
           }
 
-        .products {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          gap: 0.3rem;
-          position: relative;
-          z-index: 5;
-        }
-
-        .entries .image-wrapper > img {
-          width: 100%;
-          height: 100%;
-        }
-
+       
         .product-list-info > h3 {
           font-size: 14px;
         }
@@ -558,16 +578,7 @@ padding: 0.5rem 1rem;
          
         }
 
-        .image-wrapper {
-          height: 170px;
-          width: 170px;
-        }
-
-        .image-wrapper > .desktop-image {
-          height: 100%;
-          height: 100%;
-        } 
-
+       
         .products {
           gap: 2rem;
         }
