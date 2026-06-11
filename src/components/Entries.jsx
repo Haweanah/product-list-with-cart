@@ -58,7 +58,7 @@ export default function Entries(props) {
     onClick={() => props.increase(props.id)}
   >
     <img
-      src="/assets/images/icon-increment-quantity.svg"
+      src="/assets/images/images/icon-increment-quantity.svg"
       alt=""
     />
   </button>

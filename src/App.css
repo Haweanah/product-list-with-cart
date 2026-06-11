@@ -105,10 +105,10 @@ header {
   transform: translateX(-50%);
   bottom: 6rem;
   z-index: 10;
-  -webkit-transform:;
-  -moz-transform:;
-  -ms-transform:;
-  -o-transform:;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   -ms-border-radius: 999px;
@@ -181,6 +181,7 @@ header {
 .decrease-btn:hover,
 .add-btn:hover {
   background: white;
+  color: black;
 }
 
 .decrease-btn img,
