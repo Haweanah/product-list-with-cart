@@ -41,6 +41,10 @@ header {
   height: 220px;
   overflow: hidden;
   border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
 }
 
 .image-wrapper picture {
@@ -93,13 +97,27 @@ header {
   justify-content: space-between;
   width: 160px;
   padding: 0.8rem 1rem;
-  background: hsl(14, 86%, 42%);
+  background-color: hsl(14, 86%, 42%);
   color: white;
   border-radius: 999px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6rem;
+  z-index: 10;
+  -webkit-transform:;
+  -moz-transform:;
+  -ms-transform:;
+  -o-transform:;
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   -ms-border-radius: 999px;
   -o-border-radius: 999px;
+}
+
+.quantity-box span {
+  font-weight: 700;
+  color: white;
 }
 
 .add-to-cart > button,
@@ -113,6 +131,8 @@ header {
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
 }
+
+
 
 .add-to-cart > button {
   background-color: hsl(20, 50%, 98%);
@@ -136,30 +156,40 @@ header {
   border-top: none;
 }
 
-.quantity-box button {
-  cursor: pointer;
-  font-size: 8px;
-  padding: 0.2rem;
-  background-color: hsl(14, 86%, 42%);
-  border: 1px solid hsl(13, 31%, 94%);
+.decrease-btn,
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid white;
   border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  cursor: pointer;
- 
 }
 
- .quantity-box > button {
-  border: 1px solid hsl(13, 31%, 94%);
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+.decrease-btn:hover,
+.add-btn:hover {
+  background: white;
 }
-  
+
+.decrease-btn img,
+.add-btn img {
+  width: 10px;
+  height: 10px;
+  display: block;
+}
+
 .entries .product-list-info {
   padding: 2rem 0;
 }
@@ -245,7 +275,7 @@ header {
 }
 
 .remove-item > img{
-  padding: 0;
+ padding: 0;
  width: 18px;
  height: 18px;
  border-radius: 50%;
@@ -599,13 +629,10 @@ padding: 0.5rem 1rem;
          
         }
 
-       
         .products {
           gap: 2rem;
         }
         .cart {
           height: 100%;
-        }
-
-        
+        } 
       }
