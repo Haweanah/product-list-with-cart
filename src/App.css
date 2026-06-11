@@ -418,7 +418,7 @@ hr {
 
       /* ---------------- TABLET DESIGN ---------------- */
       
-            @media(min-width: 465px) {
+            @media(min-width: 320px) {
               .tablet-image,
               .desktop-image {
                 display: none;
