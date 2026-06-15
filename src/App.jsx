@@ -1,197 +1,151 @@
-import { useState } from "react"
-import Header from "./components/Header"
-import Entries from "./components/Entries"
-import data from "../data.json"
-import Cart from "./components/Cart"
-import OrderConfirmed from "./components/OrderConfirmed"
-import './App.css'
+import { useState } from "react";
+import Header from "./components/Header";
+import Entries from "./components/Entries";
+import data from "../data.json";
+import Cart from "./components/Cart";
+import OrderConfirmed from "./components/OrderConfirmed";
+import "./App.css";
 
 function App() {
-  
+  const [quantities, setQuantities] = useState({});
+  const [orderConfirmed, setOrderConfirmed] = useState(false);
 
-const [CartNo, setCartNo] = useState(0);
-const [quantities, setQuantities] = useState({});
-const [orderConfirmed, setOrderConfirmed] = useState(false)
+  // =========================
+  // CART LOGIC
+  // =========================
 
+  function increase(id) {
+    setQuantities(prev => ({
+      ...prev,
+      [id]: (prev[id] || 0) + 1,
+    }));
+  }
 
+  function decrease(id) {
+    setQuantities(prev => {
+      const updated = (prev[id] || 0) - 1;
 
-function addProduct() {
-  setCartNo(prev => prev + 1);
-}
+      if (updated <= 0) {
+        const copy = { ...prev };
+        delete copy[id];
+        return copy;
+      }
 
-function removeProduct() {
-  setCartNo(prev => prev > 0 ? prev - 1 : 0);
-}
+      return {
+        ...prev,
+        [id]: updated,
+      };
+    });
+  }
 
-function resetCart() {
-  setCartNo(0);
-}
+  function removeItem(id) {
+    setQuantities(prev => {
+      const copy = { ...prev };
+      delete copy[id];
+      return copy;
+    });
+  }
 
-function increase(id) {
-  setQuantities(prev => ({
-    ...prev,
-    [id]: (prev[id] || 0) + 1
-  }));
-  setCartNo(prev => prev + 1);
-}
+  function resetCart() {
+    setQuantities({});
+  }
 
-function decrease(id) {
-  setQuantities(prev => ({
-    ...prev,
-    [id]: Math.max((prev[id] || 0) - 1, 0)
-  }));
+  // =========================
+  // DERIVED VALUES (IMPORTANT)
+  // =========================
 
-  setCartNo(prev => prev > 0 ? prev - 1 : 0);
-}
+  const cartCount = Object.values(quantities).reduce(
+    (sum, q) => sum + q,
+    0
+  );
 
+  const total = data.reduce((sum, item) => {
+    return sum + (quantities[item.id] || 0) * item.price;
+  }, 0);
 
-  const Entry = data.map((entry) => (
+  // =========================
+  // PRODUCT LIST
+  // =========================
+
+  const products = data.map(item => (
     <Entries
-    key={entry.id}
-    {... entry}
-    CartNo={CartNo}
-  addProduct={addProduct}
-  removeProduct={removeProduct}
-  resetCart={resetCart}
-   quantity={quantities[entry.id] || 0}
-    increase={increase}
-    decrease={decrease}
+      key={item.id}
+      {...item}
+      quantity={quantities[item.id] || 0}
+      increase={increase}
+      decrease={decrease}
     />
-  ))
+  ));
 
+  // =========================
+  // CART ITEMS
+  // =========================
 
-
-
-const cartItem = data
-  .filter(item => quantities[item.id] > 0)
-  .map(item => (
-    !orderConfirmed ? ( <div>
+  const cartItems = data
+    .filter(item => quantities[item.id])
+    .map(item => (
       <div key={item.id} className="cart-wrapper">
-      <div className="cart-item">
-        <p className="item-name">{item.name}</p>
-        
-        <p className="count-details">
-          <span className="item-no">{quantities[item.id]}x</span>
-          <span>@ ${item.price.toFixed(2)}</span>
-          <span>
-            ${(quantities[item.id] * item.price).toFixed(2)}
-          </span>
-        </p>
-      </div>
+        <div className="cart-item">
+          <p className="item-name">{item.name}</p>
 
-      <div className="remove-item">
-        <img
-          src="/images/icon-remove-item.svg"
-          alt="remove item"
-          onClick={() => decrease(item.id)}
+          <p className="count-details">
+            <span className="item-no">{quantities[item.id]}x</span>
+            <span>@ ${item.price.toFixed(2)}</span>
+            <span>
+              ${(quantities[item.id] * item.price).toFixed(2)}
+            </span>
+          </p>
+        </div>
+
+        <div className="remove-item">
+          <img
+            src="/images/icon-remove-item.svg"
+            alt="remove item"
+            onClick={() => removeItem(item.id)}
+          />
+        </div>
+      </div>
+    ))
+    ;
+
+  // =========================
+  // ORDER CONFIRMATION
+  // =========================
+
+  function handleOrderConfirmation() {
+    setOrderConfirmed(true);
+  }
+
+  // =========================
+  // UI
+  // =========================
+
+  return (
+    <div className="page">
+      <Header />
+
+      <main>
+        <div className="products">{products}</div>
+
+        <Cart
+          cartCount={cartCount}
+          cartItems={cartItems}
+          total={total}
+          handleOrderConfirmation={handleOrderConfirmation}
+          resetCart={resetCart}
         />
-      </div>
-      
-    </div>
-    <hr 
-    className={orderConfirmed ? "hr-confirmed" : ""}
-    />
-    
-    </div>
-    ) : ( 
+      </main>
 
-    
-    <div>
-      <div key={item.id} className="ordered-items-wrapper">
-      <div className="ordered-items">
-       <div className="ordered-item-left">
-         <div className="order-image-wrapper"><img 
-        className={orderConfirmed ? "img-confirmed" : "img-not-confirmed"}
-        src={item.image.mobile} alt="" />
+      {orderConfirmed && (
+        <div className="confirmed-page-overlayed">
+          <OrderConfirmed
+            cartItems={cartItems}
+            total={total}
+          />
         </div>
-        <div className="ordered-items-details-confirmed">
-          <span className="ordered-item-name">{item.name}</span>
-        <span className="count-details">
-          <span className="item-no">{quantities[item.id]}x</span>
-          <span>@ ${item.price.toFixed(2)}</span>
-        </span>
-        
-        </div>
-       </div>
-        <div> <span className="item-total-price">
-            ${(quantities[item.id] * item.price).toFixed(2)}
-          </span></div>
-        
-        
-      </div>
-
-      
-      
+      )}
     </div>
-    <hr 
-    className={orderConfirmed ? "hr-confirmed" : ""}
-    />
-    
-    </div>
-    )
-   
-
-    
-
-
-
-  ))
- let total = 0
-
-for (let i = 0; i < data.length; i++) {
-  const item = data[i]
-  const quantity = quantities[item.id] || 0
-
-  total += item.price * quantity
+  );
 }
 
-
-function handleOrderConfirmation() {
-  setOrderConfirmed(true)
-}
-
-
-return orderConfirmed ? (
-<div>
-   <div className="page-on-confirmation">
-    <Header/>
-    <main>
-      <div className="products">
-        {Entry}
-      </div>
-
-      <Cart
-        CartNo={CartNo}
-        cartItem={cartItem}
-        total={total}
-        handleOrderConfirmation={handleOrderConfirmation}
-      />
-    </main>
-  </div>
-  <div className="confirmed-page-overlayed"><OrderConfirmed 
-    cartItem={cartItem}
-    total={total}
-  /></div>
-</div>
-  
-  
-) : (
-  <div className="page">
-    <Header/>
-    <main>
-      <div className="products">
-        {Entry}
-      </div>
-
-      <Cart
-        CartNo={CartNo}
-        cartItem={cartItem}
-        total={total}
-        handleOrderConfirmation={handleOrderConfirmation}
-      />
-    </main>
-  </div>
-)
-}
-
-export default App
+export default App;
