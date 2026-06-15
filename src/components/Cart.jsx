@@ -13,7 +13,7 @@ export default function Cart (props) {
     ) : (
         <div className="cart">
         <div className="cart-info">
-            <h2>Your Cart ({props.CartNo})</h2>
+            <h2>Your Cart ({props.cartCount})</h2>
             {props.cartItem}
         
             
@@ -25,7 +25,7 @@ export default function Cart (props) {
 
         <div className="cart-carbon">
             <img src="/assets/images/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
-            <p>This is a  <pre> </pre><strong>carbon-neutral</strong> <pre> </pre>delivery</p>
+            <p>This is a  <strong>carbon-neutral</strong> delivery</p>
         </div>
 
         <form onSubmit={(e) => {
