@@ -299,6 +299,11 @@ header {
   .image-wrapper {
     height: 220px;
   }
+
+  .add-btn,
+  .qty-box {
+    bottom: -14px;
+  }
 }
 
 /* =========================
@@ -315,6 +320,11 @@ header {
     grid-template-columns: 3fr 350px;
     gap: 2rem;
     align-items: start;
+  }
+
+  .add-btn,
+  .qty-box {
+    bottom: -16px;
   }
 
   .products {
